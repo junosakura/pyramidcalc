@@ -7,8 +7,8 @@ class PyramidCalc {
 	}
 
 	initialize(row, step) {
-		this._row = Math.min(Math.max(row, 2), 5);
-		this._step = Math.min(Math.max(step, 1), 10);
+		this._row = Math.max(row, 2);
+		this._step = Math.max(step, 1);
 		this._min = 2 ** (this._row - 1) * this._step;
 		this._max = this._min * 5;
 		this.$form = document.forms.pyramidcalc;
@@ -140,7 +140,3 @@ class PyramidCalc {
 	}
 
 }
-
-window.addEventListener("DOMContentLoaded", () => {
-	new PyramidCalc(5, 10);
-});
